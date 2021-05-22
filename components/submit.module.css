@@ -1,22 +1,22 @@
 .submit {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  border-radius: 3px;
-  font: inherit;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    font: inherit;
 
-  padding: 0.75em;
+    padding: 0.75em;
 }
 
 .submit:disabled {
-  color: #ccc;
+    color: var(--muted-1);
 }
 
 .submit:is(:active, :hover):not(:disabled) {
-  border-color: #50c1c1;
+    border-color: var(--cyan-1);
 }
 
 .submit:active:not(:disabled) {
-  /*margin-top: 1px;*/
-  /*border-bottom-width: 1px;*/
+    margin-top: 1px;
+    border-bottom-width: 1px;
 }

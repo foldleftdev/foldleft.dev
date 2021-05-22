@@ -1,23 +1,23 @@
 .container {
-  display: inline-block;
+    display: inline-block;
 }
 
 .loading {
-  border: 2px solid transparent;
-  border-top-color: #50c1c1;
-  border-radius: 1em;
+    border: 2px solid transparent;
+    border-top-color: var(--cyan-1);
+    border-radius: 1em;
 
-  animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
 
-  width: 0.8em;
-  height: 0.8em;
+    width: 0.8em;
+    height: 0.8em;
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
 }

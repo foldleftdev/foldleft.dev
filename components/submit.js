@@ -1,13 +1,13 @@
-import styles from './submit.module.css';
 import Loading from './loading';
 import Spacer from './spacer';
+import styles from './submit.module.css';
 
 /**
  * @param {object} props
- * @param {boolean} [props.inProgress=false]
+ * @param {boolean} [props.loading=false]
  */
 export default function Submit({
-  inProgress = false,
+  loading = false,
   ...rest
 }) {
   return (
@@ -15,11 +15,16 @@ export default function Submit({
       {...rest}
       className={styles.submit}
       type="submit"
-      disabled={inProgress}
+      disabled={loading}
     >
-      {inProgress ? (
-        <>Submitting <Spacer value={<Loading/>}/></>
-      ) : 'Submit'}
+      {!loading ? 'Submit' : (
+        <>
+          Submitting
+          <Spacer>
+            <Loading/>
+          </Spacer>
+        </>
+      )}
     </button>
   );
 }

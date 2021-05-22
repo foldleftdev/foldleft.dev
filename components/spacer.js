@@ -1,13 +1,13 @@
 /**
  * @param {object} props
- * @param {string|React.ReactNode} props.value
+ * @param {React.ReactNode} props.children
  */
 export default function Spacer({
-  value,
+  children,
 }) {
   return (
-    <span style={{ marginLeft: '0.25em' }}>
-      {value}
+    <span style={{ marginLeft: '0.5em' }}>
+      {children}
     </span>
   );
 }

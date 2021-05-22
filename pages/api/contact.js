@@ -17,25 +17,31 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { recaptcha, name, email, message } = req.body;
     if (!recaptcha || !email) {
-      res.status(400).end();
+      res.status(400).send('Required reCAPTCHA and email.');
     } else if (await verifyRecaptcha(recaptcha)) {
-      await transporter.sendMail({
-        from: process.env.CONTACT_FROM,
-        to: process.env.CONTACT_TO,
-        bcc: process.env.CONTACT_BCC ?? undefined,
-        replyTo: {
-          name: name ?? undefined,
-          address: email,
-        },
-        subject: 'New Inquiry',
-        text: message ?? '',
-      });
-      res.redirect(303, '/thanks');
+      try {
+        await transporter.sendMail({
+          from: process.env.CONTACT_FROM,
+          to: process.env.CONTACT_TO,
+          bcc: process.env.CONTACT_BCC || undefined,
+          replyTo: {
+            name: name || undefined,
+            address: email,
+          },
+          subject: 'New Inquiry',
+          text: message || '',
+        });
+        res.redirect(303, '/thanks');
+      } catch (e) {
+        console.error('Failed to send email:', e);
+        res.status(500).end();
+      }
     } else {
-      res.status(429).end();
+      res.status(429).send('Failed to verify reCAPTCHA.');
     }
   } else {
-    res.redirect('/');
+    res.setHeader('Allow', 'POST');
+    res.status(405).end();
   }
 }
 
@@ -47,6 +53,10 @@ async function verifyRecaptcha(token) {
       response: token,
     }),
   });
+  if (!res.ok) {
+    console.error('Failed to verify reCAPTCHA:', res.status, res.statusText);
+    return false;
+  }
   const { success, score, action } = await res.json();
   return success && score >= 0.5 && action === 'submit';
 }

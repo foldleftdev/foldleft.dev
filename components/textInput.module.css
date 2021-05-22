@@ -1,32 +1,32 @@
 .container {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .label {
-  display: inline-block;
-  margin-bottom: 0.5em;
+    display: inline-block;
+    margin-bottom: 0.25em;
 }
 
 .input {
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  border-radius: 3px;
-  font: inherit;
-  outline: none;
-  resize: vertical;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    font: inherit;
+    outline: none;
+    resize: vertical;
 
-  width: 100%;
-  padding: 0.75em;
+    width: 100%;
+    padding: 0.75em;
 }
 
 textarea.input {
-  min-height: 6em;
+    min-height: 6em;
 }
 
 .input:hover {
-  border-color: #aaa;
+    border-color: #aaa;
 }
 
 .input:focus {
-  border-color: #50c1c1;
+    border-color: var(--cyan-1);
 }

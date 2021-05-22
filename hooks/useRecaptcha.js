@@ -8,9 +8,9 @@ export default function useRecaptcha() {
 
   useEffect(() => {
     if (token) {
-      form.current.submit();
+      form.current?.submit();
     }
-  }, [token])
+  }, [token]);
 
   return {
     form,

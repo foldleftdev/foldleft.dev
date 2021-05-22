@@ -5,5 +5,5 @@ export default function Loading() {
     <div className={styles.container}>
       <div className={styles.loading}/>
     </div>
-  )
+  );
 }

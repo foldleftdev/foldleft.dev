@@ -2,8 +2,9 @@ import styles from './textInput.module.css';
 
 /**
  * @param {object} props
- * @param {string} name
- * @param {boolean} [large=false]
+ * @param {string} props.label
+ * @param {string} props.name
+ * @param {boolean} [props.large=false]
  */
 export default function TextInput({
   label,

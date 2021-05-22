@@ -17,7 +17,6 @@ export default function Layout({
         <meta name="description" content="Professional consulting and web development services."/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
-
       <header className={styles.header}>
         <a href="/">
           <Image src="/headshot.svg" alt="Headshot" width={128} height={128}/>
@@ -31,7 +30,6 @@ export default function Layout({
           </p>
         </div>
       </header>
-
       <main>
         {children}
       </main>
