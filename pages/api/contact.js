@@ -25,8 +25,8 @@ export default async function handler(req, res) {
           to: process.env.CONTACT_TO,
           bcc: process.env.CONTACT_BCC || undefined,
           replyTo: {
-            name: name || undefined,
-            address: email,
+            name: sanitize(name) || undefined,
+            address: sanitize(email),
           },
           subject: 'New Inquiry',
           text: message || '',
@@ -59,4 +59,8 @@ async function verifyRecaptcha(token) {
   }
   const { success, score, action } = await res.json();
   return success && score >= 0.5 && action === 'submit';
+}
+
+function sanitize(value) {
+  return value?.replaceAll(/[\r\n]/, '');
 }
