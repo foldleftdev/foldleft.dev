@@ -30,7 +30,7 @@ export default async function handler(req, res) {
         subject: 'New Inquiry',
         text: message ?? '',
       });
-      res.redirect('/thanks');
+      res.redirect(303, '/thanks');
     } else {
       res.status(429).end();
     }
