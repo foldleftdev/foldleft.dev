@@ -5,6 +5,7 @@
 }
 
 .header {
+  margin-bottom: 3em;
   display: flex;
   align-items: center;
   gap: 1em;
