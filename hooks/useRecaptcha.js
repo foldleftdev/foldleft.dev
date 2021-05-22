@@ -4,11 +4,11 @@ const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 export default function useRecaptcha() {
   const form = useRef();
-  const [token, setToken] = useState();
+  const [token, setToken] = useState('');
 
   useEffect(() => {
     if (token) {
-      form.current?.submit();
+      form.current.submit();
     }
   }, [token]);
 

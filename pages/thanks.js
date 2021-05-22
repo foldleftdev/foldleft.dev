@@ -1,8 +1,14 @@
 import Layout from '../components/layout';
 import Heading from '../components/heading';
 import styles from './thanks.module.css';
+import { useEffect } from 'react';
 
 export default function Thanks() {
+  useEffect(() => {
+    // Clear the inquiry form storage.
+    window.localStorage.clear();
+  });
+
   return (
     <Layout>
       <div className={styles.container}>
