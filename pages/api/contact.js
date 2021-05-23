@@ -61,6 +61,10 @@ async function verifyRecaptcha(token) {
   return success && score >= 0.5 && action === 'submit';
 }
 
+/**
+ * @param {string} [value]
+ * @returns {string | undefined}
+ */
 function sanitize(value) {
-  return value?.replaceAll(/[\r\n]/, '');
+  return value?.replace(/[\r\n]/g, '');
 }
