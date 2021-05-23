@@ -19,7 +19,7 @@ export default function Layout({
       </Head>
       <header className={styles.header}>
         <a href="/">
-          <Image src="/headshot.svg" alt="Headshot" width={128} height={128}/>
+          <Image src="/headshot.svg" alt="Headshot" width={80} height={80}/>
         </a>
         <div>
           <h1 className={styles.headerTitle}>
