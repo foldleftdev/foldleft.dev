@@ -5,7 +5,8 @@ import { useState } from 'react';
 import Head from 'next/head';
 import useRecaptcha from '../hooks/useRecaptcha';
 import Heading from '../components/heading';
-import styles from './index.module.css';
+import Section from '../components/section';
+import Jumbotron from '../components/jumbotron';
 
 export default function Index() {
   const [submitting, setSubmitting] = useState(false);
@@ -21,7 +22,8 @@ export default function Index() {
       <Head>
         <script src={recaptcha.scriptSrc}/>
       </Head>
-      <div className={styles.container}>
+      <Jumbotron/>
+      <Section narrow>
         <Heading text="Let's get in touch" suffix="📨"/>
         <form ref={recaptcha.form} method="post" action="/api/contact" onSubmit={onSubmit}>
           <input type="hidden" name="recaptcha" value={recaptcha.token}/>
@@ -30,7 +32,7 @@ export default function Index() {
           <TextInput large label="Inquiry" name="message" autoComplete="off"/>
           <Submit loading={submitting}/>
         </form>
-      </div>
+      </Section>
     </Layout>
   );
 }

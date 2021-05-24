@@ -1,11 +1,4 @@
-.container {
-    max-width: 70em;
-    margin: 0 auto;
-    padding: 1em;
-}
-
 .header {
-    margin-bottom: 3em;
     display: flex;
     align-items: center;
     gap: 1em;
@@ -17,5 +10,4 @@
 
 .headerSubtitle {
     color: var(--muted-1);
-    margin: 0;
 }

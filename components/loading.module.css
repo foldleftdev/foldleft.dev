@@ -3,14 +3,16 @@
 }
 
 .loading {
+    --size: 0.8em;
+
     border: 2px solid transparent;
     border-top-color: var(--cyan-1);
-    border-radius: 1em;
+    border-radius: var(--size);
 
     animation: spin 1s linear infinite;
 
-    width: 0.8em;
-    height: 0.8em;
+    width: var(--size);
+    height: var(--size);
 }
 
 @keyframes spin {
