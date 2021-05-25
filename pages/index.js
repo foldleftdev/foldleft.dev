@@ -1,38 +1,19 @@
-import TextInput from '../components/textInput';
-import Layout from '../components/layout';
-import Submit from '../components/submit';
-import { useState } from 'react';
 import Head from 'next/head';
-import useRecaptcha from '../hooks/useRecaptcha';
-import Heading from '../components/heading';
-import Section from '../components/section';
-import Jumbotron from '../components/jumbotron';
+import Image from 'next/image';
+import styles from './index.module.css';
 
 export default function Index() {
-  const [submitting, setSubmitting] = useState(false);
-  const recaptcha = useRecaptcha();
-
-  function onSubmit(e) {
-    setSubmitting(true);
-    recaptcha.onSubmit(e);
-  }
-
   return (
-    <Layout>
+    <div className={styles.container}>
       <Head>
-        <script src={recaptcha.scriptSrc}/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,400&display=swap"/>
+        <title>TJ Mazeika</title>
       </Head>
-      <Jumbotron/>
-      <Section narrow>
-        <Heading text="Let's get in touch" suffix="📨"/>
-        <form ref={recaptcha.form} method="post" action="/api/contact" onSubmit={onSubmit}>
-          <input type="hidden" name="recaptcha" value={recaptcha.token}/>
-          <TextInput label="Name" name="name" autoComplete="name"/>
-          <TextInput label="Email" name="email" type="email" autoComplete="email" required/>
-          <TextInput large label="Inquiry" name="message" autoComplete="off"/>
-          <Submit loading={submitting}/>
-        </form>
-      </Section>
-    </Layout>
+      <h1 className={styles.title}>TJ Mazeika</h1>
+      <p className={styles.subtitle}>Software Engineer</p>
+      {/*<Image src="/glasses.svg" alt="Glasses" width={300} height={150}/>*/}
+      {/*<Image src="/glasses.svg" alt="Glasses" width={350} height={160}/>*/}
+    </div>
   );
 }

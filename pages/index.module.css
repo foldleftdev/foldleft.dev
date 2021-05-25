@@ -1,0 +1,17 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 5em;
+}
+
+.subtitle {
+    color: #ffde19;
+    font-size: 2em;
+    font-style: italic;
+}
