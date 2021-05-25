@@ -10,12 +10,22 @@
     text-decoration-width: 2px;
 }
 
+.image {
+    margin-top: 2em;
+}
+
+.websiteHeader {
+    color: #444;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 /* big screen */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 780px) {
     .container {
         padding-top: 4em;
         padding-bottom: 4em;
-        gap: 5em;
+        gap: 3em;
     }
 
     .card {
@@ -32,7 +42,7 @@
 }
 
 /* small screen */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 780px) {
     .container {
         flex-direction: column;
         gap: 2em;

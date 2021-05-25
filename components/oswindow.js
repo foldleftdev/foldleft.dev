@@ -1,7 +1,8 @@
 import styles from './oswindow.module.css';
 
-export default function OSWindow({
+function OSWindow({
   children,
+  ...rest
 }) {
   return (
     <div className={styles.container}>
@@ -10,9 +11,23 @@ export default function OSWindow({
         <div className={styles.buttonYellow}/>
         <div className={styles.buttonGreen}/>
       </div>
-      <div className={styles.content}>
+      <div {...rest} className={`${styles.content} ${rest.className}`}>
         {children}
       </div>
     </div>
   );
 }
+
+function Fake({
+  children,
+  ...rest
+}) {
+  return (
+    <div {...rest} className={`${styles.fakeContainer} ${rest.className}`}>
+      {children}
+    </div>
+  )
+}
+
+OSWindow.Fake = Fake;
+export default OSWindow
