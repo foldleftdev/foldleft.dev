@@ -11,3 +11,17 @@
 .headerSubtitle {
     color: var(--muted-1);
 }
+
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.footerLink {
+    display: block;
+}
+
+.footerImage {
+    display: block;
+}

@@ -13,7 +13,6 @@ export default function Layout({
   return (
     <div>
       <Head>
-        <title>Mazeika LLC</title>
         <meta charSet="utf-8"/>
         <meta name="description" content="Professional consulting and web development services."/>
         <link rel="icon" href="/favicon.ico"/>
@@ -22,10 +21,17 @@ export default function Layout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
         />
+        <title>Mazeika LLC</title>
       </Head>
       <Section as="header" className={styles.header}>
         <a href="/">
-          <Image src="/headshot.svg" alt="Headshot" width={80} height={80}/>
+          <Image
+            src="/headshot.svg"
+            alt="Headshot"
+            width={80}
+            height={80}
+            priority
+          />
         </a>
         <div>
           <h1 className={styles.headerTitle}>
@@ -39,6 +45,25 @@ export default function Layout({
       <main>
         {children}
       </main>
+      <Section as="footer" className={styles.footer}>
+        <div>
+          &copy; {new Date().getFullYear()} Mazeika LLC
+        </div>
+        <div>
+          <a
+            className={styles.footerLink}
+            href="https://www.linkedin.com/company/mazeika-llc"
+          >
+            <img
+              className={styles.footerImage}
+              src="/linkedin.png"
+              alt="LinkedIn"
+              width={76 / 4}
+              height={65 / 4}
+            />
+          </a>
+        </div>
+      </Section>
     </div>
   );
 }
