@@ -21,7 +21,7 @@ export default function Index() {
                 <h1 className="text-5xl font-serif font-medium leading-tight">
                   We&apos;re the web dev studio<br/>that gets it done right.
                 </h1>
-                <a href="https://calendly.com/mazeika-llc/new-client">
+                <a href="https://calendly.com/foldleft/new-client">
                   <button className="mt-10 py-3 px-6 bg-yellow hover:shadow-xl hover:bg-yellow-2 rounded font-mono font-bold text-black text-opacity-60">
                     Let&apos;s Meet
                   </button>
