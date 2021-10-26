@@ -4,7 +4,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>FoldLeft</title>
+        <title>foldleft</title>
       </Head>
       <div>
         {children}

@@ -7,9 +7,13 @@ module.exports = {
       'serif': ['Playfair Display', 'serif'],
     },
     extend: {
-      textColor: {
+      backgroundColor: {
         'yellow': '#f5dd45',
+        'yellow-2': '#ffe433',
       },
+      backgroundImage: {
+        'dither': "url('/dither.png')",
+      }
     },
   },
   variants: {
