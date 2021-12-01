@@ -15,7 +15,7 @@ export default function Index() {
                 </a>
               </Link>
               <h1 className="row-start-1 text-2xl font-mono font-bold tracking-wide">
-                foldleft
+                foldLeft
               </h1>
               <div className="row-start-2 mt-24">
                 <h1 className="text-5xl font-serif font-medium leading-tight">
